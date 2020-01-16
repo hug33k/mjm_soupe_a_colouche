@@ -1,0 +1,35 @@
+@mixin no_margin {
+	margin: 0;
+}
+
+@mixin no_padding {
+	padding: 0;
+}
+
+@mixin no_margin_padding {
+	@include no_margin;
+	@include no_padding;
+}
+
+@mixin position_absolute_full {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+$screen-md-min: 768px;
+@mixin md {
+	@media (min-width: #{$screen-md-min}) {
+		@content;
+	}
+}
+
+@mixin mobile_padding {
+	padding: 25px 20px;
+
+	@include md {
+		@content;
+	}
+}

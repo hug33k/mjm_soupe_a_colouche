@@ -1,0 +1,65 @@
+.separator {
+	background: $color_pink;
+	padding: 25px 0;
+	position: relative;
+
+	body.event & {
+		background: $color_yellow;
+	}
+
+	&#agir .separator_message {
+		width: 75%;
+		height: auto;
+
+		@include md {
+			width: initial;
+		}
+	}
+
+	figure {
+		text-align: center;
+
+		&:first-child {
+			position: relative;
+			z-index: 10;
+		}
+
+		.separator_message {
+			width: 95%;
+			height: auto;
+
+			@include md {
+				width: 80%;
+				max-width: initial;
+			}
+		}
+
+		.separator_illustration {
+			position: absolute;
+			height: 80%;
+			top: 0;
+			bottom: 0;
+			transform: translateY(10%);
+			-webkit-transform: translateY(10%);
+			-moz-transform: translateY(10%);
+			-ms-transform: translateY(10%);
+			-o-transform: translateY(10%);
+
+			&:first-child {
+				left: 15px;
+
+				@include md {
+					left: 5%;
+				}
+			}
+
+			&:last-child {
+				right: 15px;
+
+				@include md {
+					right: 5%;
+				}
+			}
+		}
+	}
+}

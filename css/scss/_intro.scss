@@ -1,0 +1,111 @@
+#intro {
+	background: $color_pink;
+	position: relative;
+	overflow: hidden;
+	@include mobile_padding {
+		padding: 100px 0;
+	}
+
+	@include md {
+		overflow: initial;
+
+		h1, p {
+			max-width: 65%;
+		}
+	}
+
+	h1 {
+		text-transform: uppercase;
+		margin-top: 0;
+		font-size: 30px;
+
+		@include md {
+			font-size: 72px;
+		}
+	}
+
+	p {
+		font-size: 24px;
+
+		@include md {
+			font-size: 36px;
+		}
+	}
+
+	.background_layer {
+		overflow: hidden;
+
+		@include md {
+			overflow: initial;
+			z-index: 50;
+		}
+
+		.background_layer_2_mobile {
+			&[alt="Poireau"] {
+				position: absolute;
+				top: 10px;
+				height: 200px;
+				left: -190px;
+
+				@include md {
+					height: 1000px;
+				}
+			}
+
+			&[alt="Tomate"] {
+				position: absolute;
+				top: 180px;
+				height: 100px;
+				left: 70px;
+
+				@include md {
+					height: 500px;
+					left: 30%;
+				}
+			}
+
+			&[alt="Carotte"] {
+				position: absolute;
+				bottom: 100px;
+				height: 100px;
+				right: -70px;
+
+				@include md {
+					top: 200px;
+					height: 300px;
+					right: 30%;
+				}
+			}
+		}
+
+		@include md {
+			.background_layer_1 {
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
+
+	a {
+		text-align: right;
+
+		figure.button__toiaussi {
+			text-align: center;
+
+			img {
+				margin-top: 25px;
+				width: 80%;
+
+				@include md {
+					margin: auto;
+					width: initial;
+					transform: rotateZ(-20deg);
+					-webkit-transform: rotateZ	(-20deg);
+					-moz-transform: rotateZ(-20deg);
+					-ms-transform: rotateZ(-20deg);
+					-o-transform: rotateZ(-20deg);
+				}
+			}
+		}
+	}
+}
